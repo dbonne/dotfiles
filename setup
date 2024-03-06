@@ -7,23 +7,29 @@
 # create directories
 export XDG_CONFIG_HOME="$HOME"/.config
 mkdir -p "$XDG_CONFIG_HOME"/bash
+mkdir -p "$XDG_CONFIG_HOME"/alacritty
+mkdir -p "$XDG_CONFIG_HOME"/alacritty/themes
 mkdir -p "$XDG_CONFIG_HOME"/k9s
 
+git clone https://github.com/alacritty/alacritty-theme "$XDG_CONFIG_HOME"/alacritty/themes
+
 # Symbolic links
+ln -sf "$PWD/alacritty.toml" "$XDG_CONFIG_HOME"/alacritty/alacritty.toml
 ln -sf "$PWD/k9s/skin.yml" "$XDG_CONFIG_HOME"/k9s/skin.yml
 ln -sf "$PWD/.bash_profile" "$HOME"/.bash_profile
 ln -sf "$PWD/.bashrc" "$HOME"/.bashrc
 ln -sf "$PWD/.inputrc" "$HOME"/.inputrc
+ln -sf "$PWD/nvim" "$XDG_CONFIG_HOME"/nvim
 ln -sf "$PWD/.tmux.conf" "$HOME"/.tmux.conf
 # ln -sf "$PWD/nvim" "$XDG_CONFIG_HOME"/nvim
 
 curl -sS https://starship.rs/install.sh | sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-brew install --cask iterm2
+brew install --cask alacritty
 brew install --cask amethyst
 
-brew install gh neovim lazygit bat lsd fzf k9s coreutils tmux
+brew install gh nvim lazygit bat lsd fzf k9s coreutils tmux
 
 brew tap homebrew/cask-fonts
 brew install --cask font-fira-code-nerd-font
