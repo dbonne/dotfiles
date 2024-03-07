@@ -66,8 +66,9 @@ alias gs='git status'
 alias lg='lazygit'
 
 # ls
-alias ls='ls --color=auto'
-alias ll='ls -la'
+alias ls='lsd --color=auto --group-directories-first'
+alias l='ls'
+alias ll='ls -l'
 alias la='ls -lathr'
 
 # finds all files recursively and sorts by last modification, ignore hidden files
@@ -109,4 +110,3 @@ source "$HOME/.privaterc"
 [[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
 
 eval "$(starship init bash)"
-
