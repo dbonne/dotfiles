@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # This is the setup script for my config. The idea is to be able to run
-# this after cloning the repo on a Mac ystem and be up and running very 
+# this after cloning the repo on a Mac ystem and be up and running very
 # quickly.
 
 # create directories
@@ -29,9 +29,8 @@ curl -sS https://starship.rs/install.sh | sh
 brew install --cask alacritty
 brew install --cask amethyst
 
-brew install gh nvim lazygit bat lsd fzf k9s coreutils tmux
+brew install gh nvim git lazygit bat lsd fzf k9s coreutils tmux
 
 brew tap homebrew/cask-fonts
 brew install --cask font-fira-code-nerd-font
 brew install font-monaspace
-
