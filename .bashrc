@@ -17,12 +17,12 @@ export VISUAL=nvim
 export EDITOR=nvim
 
 # directories
-export REPOS="$HOME/Repos"
+export REPOS="$HOME/Work/Development/code"
 export GITUSER="dbonne"
 export GHREPOS="$REPOS/github.com/$GITUSER"
 export DOTFILES="$GHREPOS/dotfiles"
 export SCRIPTS="$DOTFILES/scripts"
-export SECOND_BRAIN="$HOME/garden"
+export SECOND_BRAIN="$HOME/Work/garden"
 
 # Go related. In general all executables and scripts go in .local/bin
 export GOBIN="$HOME/.local/bin"
