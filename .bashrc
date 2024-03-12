@@ -17,9 +17,9 @@ export VISUAL=nvim
 export EDITOR=nvim
 
 # directories
-export REPOS="$HOME/Work/Development/code"
+export GIT_CU_DIR="$HOME/Work/Development/code"
 export GITUSER="dbonne"
-export GHREPOS="$REPOS/github.com/$GITUSER"
+export GHREPOS="$GIT_CU_DIR/github.com/$GITUSER"
 export DOTFILES="$GHREPOS/dotfiles"
 export SCRIPTS="$DOTFILES/scripts"
 export SECOND_BRAIN="$HOME/Work/garden"
@@ -56,7 +56,7 @@ alias cdblog="cd $HOME/websites/blog"
 alias dot="cd $GHREPOS/dotfiles"
 alias cdpblog="cd $SECOND_BRAIN/2-areas/blog/content"
 alias lab="cd $LAB"
-alias repos="cd $REPOS"
+alias repos="cd $GIT_CU_DIR"
 alias cdgo="cd $GHREPOS/go/"
 alias c="clear"
 
