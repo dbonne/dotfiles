@@ -4,6 +4,10 @@
 # this after cloning the repo on a Mac ystem and be up and running very
 # quickly.
 
+# ---------------------- local utility functions ---------------------
+
+_have() { type "$1" &>/dev/null; }
+
 # create directories
 export XDG_CONFIG_HOME="$HOME"/.config
 mkdir -p "$XDG_CONFIG_HOME"/bash
@@ -23,13 +27,22 @@ ln -sf "$PWD/nvim" "$XDG_CONFIG_HOME"/nvim
 ln -sf "$PWD/.tmux.conf" "$HOME"/.tmux.conf
 # ln -sf "$PWD/nvim" "$XDG_CONFIG_HOME"/nvim
 
-curl -sS https://starship.rs/install.sh | sh
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# Install some programs
+_have starship || curl -sS https://starship.rs/install.sh | sh
+_have brew || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+_have alacritty || brew install --cask alacritty
+_have gh || brew install gh
+_have nvim || brew install nvim
+_have git || brew install git
+_have lazygit || brew install lazygit
+_have bat || brew install bat
+_have lsd || brew install lsd
+_have fzf || brew install fzf
+_have k9s || brew install k9s
+_have tmux || brew install tmux
 
-brew install --cask alacritty
 brew install --cask amethyst
-
-brew install gh nvim git lazygit bat lsd fzf k9s coreutils tmux
+brew install coreutils
 
 brew tap homebrew/cask-fonts
 brew install --cask font-fira-code-nerd-font

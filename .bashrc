@@ -10,6 +10,17 @@
 # Set to superior editing mode
 #set -o vi
 
+# ---------------------- local utility functions ---------------------
+
+_have() { type "$1" &>/dev/null; }
+
+# ----------------------
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+	# needed for brew
+	_have /opt/homebrew/bin/brew && eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 # ~~~~~~~~~~~~~~~ Environment Variables ~~~~~~~~~~~~~~~~~~~~~~~~
 
 # config
@@ -88,8 +99,8 @@ alias sbr='source ~/.bashrc'
 
 # kubectl
 alias k='kubectl'
-source <(kubectl completion bash)
-complete -o default -F __start_kubectl k
+_have kubectl && source <(kubectl completion bash)
+_have kubectl && complete -F __start_kubectl k
 
 # env variables
 export VISUAL=nvim
@@ -109,4 +120,8 @@ source "$HOME/.privaterc"
 # brew bash completion
 [[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
 
-eval "$(starship init bash)"
+_have starship && eval "$(starship init bash)"
+
+PATH=~/.console-ninja/.bin:$PATH
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
