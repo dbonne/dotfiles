@@ -1,3 +1,14 @@
+# utility functions
+generate_password() {
+	if [[ $# -ne 1 ]]; then
+		echo "Usage: generate_password <length>"
+		return 1
+	fi
+
+	local length="$1"
+	pwgen -s $length 1
+}
+
 # ~~~~~~~~~~~~~~~ Aliases ~~~~~~~~~~~~~~~~~~~~~~~~
 
 alias v=nvim
@@ -56,3 +67,8 @@ export EDITOR=nvim
 alias fp="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
 # search for a file with `fzf and open it in vim
 alias vf='v $(fp)'
+
+alias generate_password_easy="pwgen -s 8 1"
+alias generate_password_medium="pwgen -s 12 1"
+alias generate_password_hard="pwgen -s 16 1"
+alias generate_password_variable="generate_password"
