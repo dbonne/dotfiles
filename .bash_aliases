@@ -54,6 +54,7 @@ alias eb='v ~/.bashrc'
 alias sbr='source ~/.bashrc'
 
 # kubectl
+alias kubectl="kubecolor"
 alias k='kubectl'
 _have kubectl && source <(kubectl completion bash)
 _have kubectl && complete -F __start_kubectl k

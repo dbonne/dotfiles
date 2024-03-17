@@ -17,9 +17,8 @@ mkdir -p "$XDG_CONFIG_HOME"/k9s
 
 # check if the directory is empty
 if [ ! "$(ls -A "$XDG_CONFIG_HOME/alacritty/themes")" ]; then
-  git clone https://github.com/alacritty/alacritty-theme "$XDG_CONFIG_HOME"/alacritty/themes
+	git clone https://github.com/alacritty/alacritty-theme "$XDG_CONFIG_HOME"/alacritty/themes
 fi
-
 
 # Symbolic links
 ln -sf "$PWD/alacritty.toml" "$XDG_CONFIG_HOME"/alacritty/alacritty.toml
@@ -45,6 +44,7 @@ _have fzf || brew install fzf
 _have k9s || brew install k9s
 _have tmux || brew install tmux
 _have obs || brew install --cask obs
+_have kubecolor || brew install kubecolor/tap/kubecolor
 
 _have dive || brew install dive
 _have dotnet || brew install dotnet
