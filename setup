@@ -33,7 +33,7 @@ ln -sf "$PWD/.tmux.conf" "$HOME"/.tmux.conf
 # Install some programs
 _have starship || curl -sS https://starship.rs/install.sh | sh
 _have brew || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-_have alacritty || brew install --cask alacritty
+# _have alacritty || brew install --cask alacritty
 # _have gh || brew install gh
 _have nvim || brew install nvim
 _have git || brew install git
