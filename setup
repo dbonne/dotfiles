@@ -31,7 +31,7 @@ ln -sf "$PWD/.tmux.conf" "$HOME"/.tmux.conf
 # ln -sf "$PWD/nvim" "$XDG_CONFIG_HOME"/nvim
 
 # Install some programs
-_have starship || curl -sS https://starship.rs/install.sh | sh
+#_have starship || curl -sS https://starship.rs/install.sh | sh
 _have brew || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 # _have alacritty || brew install --cask alacritty
 # _have gh || brew install gh
@@ -61,7 +61,7 @@ _have tree || brew install tree
 
 brew install --cask amethyst
 brew install --cask flameshot
-# brew install --cask multipass
+#brew install --cask multipass
 
 brew tap homebrew/cask-fonts
 brew install --cask font-fira-code-nerd-font
