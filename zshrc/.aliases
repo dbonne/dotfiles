@@ -1,0 +1,27 @@
+# ~~~~~~~~~~~~~~~ Aliases ~~~~~~~~~~~~~~~~~~~~~~~~
+
+alias v=nvim
+alias vim=nvim
+
+# cd
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias repos='cd $GIT_CU_DIR'
+alias grepos='cd $GIT_CU_DIR/github.com'
+
+# ls
+alias l='lsd --group-dirs=first'
+alias ll='l -ah'
+alias la='ll -l'
+
+alias tmc='tmux -CC'
+
+alias randompasswd='pwgen -s 53 1'
+alias k=kubecolor
+compdef kubecolor=kubectl # only needed for zsh
+
+alias ios='open -a Simulator'
+alias lg=lazygit
+alias nosleep='caffeinate -ids'
+

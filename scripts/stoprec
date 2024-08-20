@@ -1,4 +1,0 @@
-#!/bin/bash
-
-gsed -i 's/size = 20/size = 15/g' $DOTFILES/alacritty.toml
-gsed -i 's/size = 25/size = 15/g' $DOTFILES/alacritty.toml
