@@ -34,14 +34,14 @@ if type fzf &>/dev/null; then
 fi
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/dbonne/Work/Google/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/dbonne/Work/Google/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f "$HOME/Work/Google/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/Work/Google/google-cloud-sdk/path.zsh.inc"; fi
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 export DOTNET_ROOT="/opt/homebrew/opt/dotnet/libexec"
-export PATH="$PATH:/Users/dbonne/.dotnet/tools"
+export PATH="$PATH:$HOME/.dotnet/tools"
 
 export GIT_CU_DIR=$HOME/Work/Development/code
 export PATH=$HOME/Library/Python/3.9/bin:$PATH
@@ -59,6 +59,6 @@ PATH=$HOME/.bun/bin:$PATH
 PATH=$HOME/.pub-cache/bin:$PATH
 
 # bun completions
-[ -s "/Users/dbonne/.bun/_bun" ] && source "/Users/dbonne/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
