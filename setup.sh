@@ -21,7 +21,6 @@ packages=(
   npm
   lazygit
   fzf
-  direnv
 )
 
 # Iterate over the array and install each package
