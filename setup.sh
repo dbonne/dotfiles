@@ -23,15 +23,18 @@ packages=(
   fzf
 )
 
-# Iterate over the array and install each package
-for package in "${packages[@]}"; do
-  echo "Installing $package..."
-  if [[ "$(uname)" == "Darwin" ]]; then # "You are on a macOS system."
-    brew install "$package"
-  else # You are not on a macOS system.
-    sudo apt install -y "$package"
-  fi
-done
+install_cmd=""
+
+# Change the installation command if we are in macOS
+if [[ "$(uname)" == "Darwin" ]]; then
+  install_cmd="brew install "
+else
+  install_cmd="sudo apt-get install -y "
+  sudo apt-get update
+fi
+
+# Install packages using the command
+$install_cmd "${packages[@]}"
 
 common_directories=(
   "$XDG_CONFIG_HOME/nvim"
@@ -55,4 +58,5 @@ if [[ "$(uname)" == "Darwin" ]]; then
 else
   echo "You are not on a macOS system."
   stow -t "$HOME" bashrc
+  sudo rm -rf /var/lib/apt/lists/*
 fi
