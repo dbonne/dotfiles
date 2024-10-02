@@ -54,5 +54,5 @@ if [[ "$(uname)" == "Darwin" ]]; then
   stow -t "$HOME" zshrc
 else
   echo "You are not on a macOS system."
-  # stow -t "$HOME" bashrc
+  stow -t "$HOME" bashrc
 fi
