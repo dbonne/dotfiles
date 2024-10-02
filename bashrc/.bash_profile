@@ -1,10 +1,10 @@
 # Only run on macOS
 
 if [ -r ~/.bashrc ]; then
-	source ~/.bashrc
+  source ~/.bashrc
 fi
 
-export XDG_CONFIG_HOME="$HOME"/.config
+export XDG_CONFIG_HOME=$HOME/.config
 
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 export PATH="$HOME/Library/Python/3.9/bin:$PATH"
