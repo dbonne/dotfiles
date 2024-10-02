@@ -27,8 +27,11 @@ packages=(
 # Iterate over the array and install each package
 for package in "${packages[@]}"; do
   echo "Installing $package..."
-  # /home/linuxbrew/.linuxbrew/bin/brew install "$package"
-  sudo apt install "$package"
+  if [[ "$(uname)" == "Darwin" ]]; then # "You are on a macOS system."
+    brew install "$package"
+  else # You are not on a macOS system.
+    sudo apt install -y "$package"
+  fi
 done
 
 common_directories=(
