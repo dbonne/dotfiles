@@ -16,6 +16,12 @@ create_directories() {
   done
 }
 
+packages=(
+  stow
+  ripgrep
+  fzf
+)
+
 install_cmd="sudo apt-get install -y "
 
 apt-get update
