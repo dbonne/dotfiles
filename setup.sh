@@ -18,8 +18,10 @@ create_directories() {
 
 install_cmd="sudo apt-get install -y "
 
+apt-get update
 # Install packages using the command
 $install_cmd "${packages[@]}"
+rm -rf /var/lib/apt/lists/*
 
 common_directories=(
   "$XDG_CONFIG_HOME/nvim"
