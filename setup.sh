@@ -24,7 +24,7 @@ packages=(
 
 install_cmd="sudo apt-get install -y "
 
-apt-get update
+sudo apt-get update
 # Install packages using the command
 $install_cmd "${packages[@]}"
 rm -rf /var/lib/apt/lists/*
