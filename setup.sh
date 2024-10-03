@@ -17,6 +17,7 @@ create_directories() {
 }
 
 packages=(
+  neovim
   stow
   ripgrep
   fzf
